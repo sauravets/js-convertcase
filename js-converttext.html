@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert-case</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="top-menu">
+            <ul class="buttons">
+                <li><a class="active" href="">Convert Case</a></li>
+                <li><a href="">Small Text Generator</a></li>
+                <li><a href="">Wide Text Generator</a></li>
+                <li><a href="">Strikethrough Text Generator</a></li>
+                <li><a href="">Reverse Text Generator</a></li>
+                <li><a href="">Upside Down Text Generator</a></li>
+                <li><a href="">Morse Code Translator</a></li>
+                <li><a href="">Binary Code Translator</a></li>
+                <li><a href="">Title Case Converter</a></li>
+                <li><a href="">Bold Text Generator</a></li>
+                <li><a href="">Italic Text Generator</a></li>
+                <li><a class="dropdown" href="">More Tools</a>
+                <ul class="dropdown-menu">
+                    <li><a href="">Underlined Text generator</a></li>
+                    <li><a href="">Mirror Text Generator</a></li>
+                    <li><a href="">Unicode Text Generator</a></li>
+                    <li><a href="">Bubble Text Generator</a></li>
+                    <li><a href="">Sentence Case Generator</a></li>
+                    <li><a href="">Zalgo Glitech Text Generator</a></li>
+                    <li><a href="">Invisible Text Generator</a></li>
+                    <li><a href="">ASCII Art Generator</a></li>
+                    <li><a href="">Online Notepad</a></li>
+                    <li><a href="">Online Text Tools</a></li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <form action="">
+                <div class="header">
+                    <h1>Accidentally left the caps lock on and typed something, but can't be bothered to start again and
+                        retype
+                        it all?</h1>
+                    <p>Simply enter your text and choose the case you want to convert it to.</p>
+                    <textarea id="textoutput" name="textarea"  class="textarea" cols="20" rows="10"
+                        placeholder="Type or paste your content here"></textarea>
+                    <div class="bottom-buttons">
+                        <button id="sentence" class="bottom-btn">Sentence case</button>
+                        <button id="lower" class="bottom-btn">lower case</button>
+                        <button id="upper" class="bottom-btn">UPPER CASE</button>
+                        <button id="capitalized" class="bottom-btn">Capitalized Case</button>
+                        <button id="alternating" class="bottom-btn">aLtErNaTiNg cAsE</button>
+                        <button id="title" class="bottom-btn">Title Case</button>
+                        <button id="inverse" class="bottom-btn">InVeRsE CaSe</button>
+                        <button id="download" class="bottom-btn">Download Text</button>
+                        <button id="clipboard" class="bottom-btn">Copy to Clipboard</button>
+                        <button id="clear" class="bottom-btn">Clear</button>
+                    </div>
+                    <div class="count-function">
+                        Character Count: <span id="charcter-count">0</span>
+                        | Word Count: <span id="word-count">0</span>
+                        | Line Count: <span id="line-count">0</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

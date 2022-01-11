@@ -1,0 +1,106 @@
+.main-container{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ .buttons a{
+    background-color:rgb(77, 70, 70);
+    color: #fff;
+    margin-right: 4px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.buttons li:last-child{
+    margin-right: -4px;
+}
+.buttons a:hover{
+    background: #c2c2c2;
+    transition:linear;
+    
+}
+.buttons a.active{
+    background: #c2c2c2;
+    color: #111
+}
+.dropdown{
+    position: relative;
+    display: block;
+}
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-menu a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.header{
+    background-color:#e0e0e0;
+    padding: 1px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header h1{
+    font-size: 24px;
+    padding-left: 13px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.header .textarea{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 97%;
+    border-top: solid 2px gray;
+}
+.header p{
+    font-size: 15px;
+    padding-left: 13px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.bottom-buttons{
+    padding: 5px;
+    padding-left: 13px;
+}
+.bottom-btn{
+    border: none;
+    outline: none;
+    background-color:rgb(170, 163, 163);
+    cursor: pointer;
+    font-size: 12px;
+    padding: 7px 5px;
+    display: inline-flex;
+    color: black;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.bottom-btn:hover{
+    background-color: rgb(241, 229, 229);
+}
+
+.count-function{
+    padding: 15px;
+    font-size: 14px;
+}
