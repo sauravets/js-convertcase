@@ -24,19 +24,19 @@
                 <li><a href="">Title Case Converter</a></li>
                 <li><a href="">Bold Text Generator</a></li>
                 <li><a href="">Italic Text Generator</a></li>
-                <li><a class="dropdown" href="">More Tools</a>
-                    <!-- <ul class="dropdown-menu">
-                    <li><a href="">Underlined Text generator</a></li>
-                    <li><a href="">Mirror Text Generator</a></li>
-                    <li><a href="">Unicode Text Generator</a></li>
-                    <li><a href="">Bubble Text Generator</a></li>
-                    <li><a href="">Sentence Case Generator</a></li>
-                    <li><a href="">Zalgo Glitech Text Generator</a></li>
-                    <li><a href="">Invisible Text Generator</a></li>
-                    <li><a href="">ASCII Art Generator</a></li>
-                    <li><a href="">Online Notepad</a></li>
-                    <li><a href="">Online Text Tools</a></li>
-                </ul> -->
+                <li class="dropdown"><a href="">More Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">Underlined Text generator</a></li>
+                        <li><a href="">Mirror Text Generator</a></li>
+                        <li><a href="">Unicode Text Generator</a></li>
+                        <li><a href="">Bubble Text Generator</a></li>
+                        <li><a href="">Sentence Case Generator</a></li>
+                        <li><a href="">Zalgo Glitech Text Generator</a></li>
+                        <li><a href="">Invisible Text Generator</a></li>
+                        <li><a href="">ASCII Art Generator</a></li>
+                        <li><a href="">Online Notepad</a></li>
+                        <li><a href="">Online Text Tools</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -49,6 +49,9 @@
                     <p>Simply enter your text and choose the case you want to convert it to.</p>
                     <textarea id="textoutput" name="textarea" class="textarea" cols="20" rows="10"
                         placeholder="Type or paste your content here"></textarea>
+                    <div class="msg">
+                        <span id="time"></span>
+                    </div>
                     <div class="bottom-buttons">
                         <button id="sentence" class="bottom-btn">Sentence case</button>
                         <button id="lower" class="bottom-btn">lower case</button>
@@ -58,7 +61,8 @@
                         <button id="title" class="bottom-btn">Title Case</button>
                         <button id="inverse" class="bottom-btn">InVeRsE CaSe</button>
                         <button id="download" class="bottom-btn">Download Text</button>
-                        <button id="clipboard" class="bottom-btn">Copy to Clipboard</button>
+                        <button id="clipboard" class="bottom-btn" data-clipboard-target="Text">Copy to
+                            Clipboard</button>
                         <button id="clear" class="bottom-btn">Clear</button>
                     </div>
                     <div class="count-function">
