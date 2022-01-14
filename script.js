@@ -9,6 +9,7 @@ document.getElementById("inverse").addEventListener("click", inversecaseFunction
 document.getElementById("clipboard").addEventListener("click", clipboardFunction);
 document.getElementById("clear").addEventListener("click", clearFunction);
 document.getElementById("download").addEventListener("click", downloadFile);
+document.getElementById("textoutput").addEventListener("keyup", countFunction);
 
 var textoutput = document.getElementById("textoutput");
 
@@ -102,11 +103,11 @@ function downloadFile(event){
 // 9.Copy to clipboard-
 function clipboardFunction(event) {
     event.preventDefault();
-    document.getElementById("textoutput").select();
+    textoutput.select();
     document.execCommand("copy");
-    document.getElementById("time").innerHTML = "Text Copied to Clipboard!";
+    document.getElementById("clipboard-msg").innerHTML = "Text Copied to Clipboard!";
     setTimeout(function(){
-        document.getElementById("time").innerHTML = "";
+        document.getElementById("clipboard-msg").innerHTML = "";
     }, 3000);
 }
 
@@ -120,7 +121,6 @@ function clearFunction(event) {
 }
 
 //Count Functions//
-document.getElementById("textoutput").addEventListener("keyup", countFunction);
 
 function countFunction() {
     let count = textoutput.value;
