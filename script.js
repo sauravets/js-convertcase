@@ -8,6 +8,7 @@ document.getElementById("title").addEventListener("click", titlecaseFunctiion);
 document.getElementById("inverse").addEventListener("click", inversecaseFunction);
 document.getElementById("clipboard").addEventListener("click", clipboardFunction);
 document.getElementById("clear").addEventListener("click", clearFunction);
+document.getElementById("download").addEventListener("click", downloadFile);
 
 var textoutput = document.getElementById("textoutput");
 
@@ -79,37 +80,34 @@ function inversecaseFunction(event) {
 }
 
 // 8.Download text-
-    function download(filename, text) {
-        var element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-        element.setAttribute('download', filename);
-       element.style.display = 'none';
-       document.body.appendChild(element);
-       element.click();
-       document.body.removeChild(element);
-   }
+function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+}
 
-   // Start file download.
-   document.getElementById("download").addEventListener("click", function(event){
-        // Generate download of convert-case.txt file with some content
-        event.preventDefault();
-       var text = document.getElementById("textoutput").value;
-       var filename = "convert-case.txt";
-       download(filename, text);
-   }, false);
+
+// Start file download.
+function downloadFile(event){
+    event.preventDefault();
+    var text = textoutput.value;
+    var filename = "convert-case.txt";
+    download(filename, text);
+}
 
 // 9.Copy to clipboard-
-
-let myTimeout = setTimeout(clipboardFunction,3000);
 function clipboardFunction(event) {
     event.preventDefault();
-    // let copyText = textoutput.value;
     document.getElementById("textoutput").select();
     document.execCommand("copy");
     document.getElementById("time").innerHTML = "Text Copied to Clipboard!";
-    // console.log("hello");
-
-    // console.log(copyText);
+    setTimeout(function(){
+        document.getElementById("time").innerHTML = "";
+    }, 3000);
 }
 
 // 10.Clear text-
@@ -128,7 +126,6 @@ function countFunction() {
     let count = textoutput.value;
     let wordCount = 0;
     let lineCount = 0;
-   
     if (count.length > 0 ) {
         wordCount = count.split(" ").length;
         lineCount = count.split("\n").length;
