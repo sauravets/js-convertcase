@@ -4,54 +4,15 @@
     margin-right: auto;
 }
 
-.buttons {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
- .buttons a{
-    background-color:rgb(77, 70, 70);
-    color: #fff;
-    margin-right: 4px;
-    display: block;
-    color: white;
-    text-decoration: none;
-    text-align: center;
+.button {
+    background-color:#c2c2c2;
     font-size: 13px;
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 40px;
+    border: none;
 }
-.buttons li:last-child{
-    margin-right: -4px;
-}
-.buttons a:hover{
-    background: #c2c2c2;
-    transition:linear;
-    
-}
-.buttons a.active{
-    background: #c2c2c2;
-    color: #111
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
-  }
 
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    min-width: 160px;
-    list-style: none;
-    z-index: 1;
-    right: 0;
-  }
-  .dropdown:hover .dropdown-menu {
-    display: block;
-} 
-  
 .header{
     background-color:#e0e0e0;
     padding: 1px;
