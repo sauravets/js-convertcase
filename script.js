@@ -90,8 +90,6 @@ function download(filename, text) {
     element.click();
     document.body.removeChild(element);
 }
-
-
 // Start file download.
 function downloadFile(event){
     event.preventDefault();
