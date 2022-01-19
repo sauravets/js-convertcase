@@ -111,12 +111,13 @@
 
     //Count Functions//
 
-    document.getElementById("textoutput").addEventListener("click", function count() {
+    document.getElementById("textoutput").addEventListener("input", function count() {
         let count = textoutput.value;
         let wordCount = 0;
         let lineCount = 0;
         if (count.length > 0) {
-            wordCount = count.split(" ").length;
+            wordCount = count.split(' ').filter(a => a.trim().length > 0).length;
+            // console.log(wordCount);
             lineCount = count.split("\n").length;
         }
 
