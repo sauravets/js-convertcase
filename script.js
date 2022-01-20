@@ -49,12 +49,21 @@
     // 6.Title Case-
     document.getElementById("title").addEventListener("click", function titleCase(event) {
         event.preventDefault();
+        // let str = ["To","And","The"];
+        // let str = textoutput.value;
+        // let str = ["to","and","the"];
         let text = textoutput.value;
         textoutput.value = text
             .toLowerCase()
             .split(' ')
             .map(word => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ');
+        // let merged = str.concat(text);
+        // textoutput.innerHTML = str.concat(text);
+        // console.log(merged);
+        console.log(text);
+        // console.log(text.replace("To","to"));
+        // console.log(str.replace(/to|and|the/));
     });
 
     // 7.InVeRsE CaSe-
@@ -78,10 +87,7 @@
         element.click();
         document.body.removeChild(element);
     }
-
-
     // Start file download.
-
     document.getElementById("download").addEventListener("click", function downloadCase(event) {
         event.preventDefault();
         var text = textoutput.value;
