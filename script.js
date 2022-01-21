@@ -46,24 +46,24 @@
         textoutput.value = chars.join("");
     });
 
-    // 6.Title Case-
+// 6.Title Case-
     document.getElementById("title").addEventListener("click", function titleCase(event) {
         event.preventDefault();
-        // let str = ["To","And","The"];
-        // let str = textoutput.value;
-        // let str = ["to","and","the"];
-        let text = textoutput.value;
-        textoutput.value = text
-            .toLowerCase()
-            .split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-        // let merged = str.concat(text);
-        // textoutput.innerHTML = str.concat(text);
-        // console.log(merged);
-        console.log(text);
-        // console.log(text.replace("To","to"));
-        // console.log(str.replace(/to|and|the/));
+        let str = textoutput.value;
+ 
+        const words = str.split(" ");
+
+        words[0] = words[0].slice(0, 1).toUpperCase() + words[0].slice(1).toLowerCase();
+
+        for (let i = 1; i < words.length; i++) {
+            if (!["of", "and", "the", "to"].includes(words[i].toLowerCase())) {
+                words[i] =  words[i].slice(0, 1).toUpperCase() + words[i].slice(1).toLowerCase();
+            } else {
+                words[i] = words[i].toLowerCase();
+            }
+        }
+        textoutput.value = words.join(" "); 
+        console.log(words);
     });
 
     // 7.InVeRsE CaSe-
