@@ -47,24 +47,53 @@
     });
 
 // 6.Title Case-
+     // document.getElementById("title").addEventListener("click", function titleCase(event) {
+    //     event.preventDefault();
+    //     let str = textoutput.value;
+
+
+    //     const words = str.split(" ");
+
+    //     words[0] = words[0].slice(0, 1).toUpperCase() + words[0].slice(1).toLowerCase();
+
+    //     for (let i = 1; i < words.length; i++) {
+    //         if (!["of", "and", "the", "to"].includes(words[i].toLowerCase())) {
+    //             words[i] =  words[i].slice(0, 1).toUpperCase() + words[i].slice(1).toLowerCase();
+    //         } else {
+    //             words[i] = words[i].toLowerCase();
+    //         }
+    //     }
+    //     textoutput.value = words.join(" "); 
+    //     console.log(words);
+    // // // });
     document.getElementById("title").addEventListener("click", function titleCase(event) {
         event.preventDefault();
         let str = textoutput.value;
- 
-        const words = str.split(" ");
+        let word = textoutput.value;
+        str = (words, ignore = ["of", "and", "the", "to"]) => {
 
-        words[0] = words[0].slice(0, 1).toUpperCase() + words[0].slice(1).toLowerCase();
+            ignore = new Set(ignore);
 
-        for (let i = 1; i < words.length; i++) {
-            if (!["of", "and", "the", "to"].includes(words[i].toLowerCase())) {
-                words[i] =  words[i].slice(0, 1).toUpperCase() + words[i].slice(1).toLowerCase();
-            } else {
-                words[i] = words[i].toLowerCase();
-            }
-        }
-        textoutput.value = words.join(" "); 
-        console.log(words);
+            return words.replace(/\w+/g, (word, i) => {
+                word = word.toLowerCase();
+
+                if (i && ignore.has(word)) {
+                    return word;
+                }
+
+                return word[0].toUpperCase() + word.slice(1);
+               
+            });
+            
+        };
+        textoutput.value = word;
+        console.log(word);
     });
+   
+        // [
+        //     "Into unmerciful the entreating stronger to of word guessing.",
+        //     "the OLD MAN aND. THE. sEa"
+        // ].forEach(test => console.log(titleCaseWords(test)));
 
     // 7.InVeRsE CaSe-
     document.getElementById("inverse").addEventListener("click", function inverseCase(event) {
