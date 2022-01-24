@@ -45,56 +45,34 @@
         }
         textoutput.value = chars.join("");
     });
-
+    function string_convert(word) {
+        return word.slice(0, 1).toUpperCase() + word.slice(1).toLowerCase();
+    }
+    
 // 6.Title Case-
-     // document.getElementById("title").addEventListener("click", function titleCase(event) {
-    //     event.preventDefault();
-    //     let str = textoutput.value;
+document.getElementById("title").addEventListener("click", function titleCase(event) {
+        
+    event.preventDefault();
+    
+    let str = textoutput.value;
 
+    const words = str.split(" ");
 
-    //     const words = str.split(" ");
+    words[0] = string_convert(words[0]);
 
-    //     words[0] = words[0].slice(0, 1).toUpperCase() + words[0].slice(1).toLowerCase();
+    for (let i = 1; i < words.length; i++) {
+        let message = words[i].replace(/[^a-zA-Z ]/g, "");
 
-    //     for (let i = 1; i < words.length; i++) {
-    //         if (!["of", "and", "the", "to"].includes(words[i].toLowerCase())) {
-    //             words[i] =  words[i].slice(0, 1).toUpperCase() + words[i].slice(1).toLowerCase();
-    //         } else {
-    //             words[i] = words[i].toLowerCase();
-    //         }
-    //     }
-    //     textoutput.value = words.join(" "); 
-    //     console.log(words);
-    // // // });
-    document.getElementById("title").addEventListener("click", function titleCase(event) {
-        event.preventDefault();
-        let str = textoutput.value;
-        let word = textoutput.value;
-        str = (words, ignore = ["of", "and", "the", "to"]) => {
-
-            ignore = new Set(ignore);
-
-            return words.replace(/\w+/g, (word, i) => {
-                word = word.toLowerCase();
-
-                if (i && ignore.has(word)) {
-                    return word;
-                }
-
-                return word[0].toUpperCase() + word.slice(1);
-               
-            });
-            
-        };
-        textoutput.value = word;
-        console.log(word);
-    });
-   
-        // [
-        //     "Into unmerciful the entreating stronger to of word guessing.",
-        //     "the OLD MAN aND. THE. sEa"
-        // ].forEach(test => console.log(titleCaseWords(test)));
-
+        if (!["of", "and", "the", "to"].includes(message.toLowerCase())) {
+            words[i] =  string_convert(words[i]);
+        } else {
+            words[i] = words[i].toLowerCase();
+        }
+    
+    }
+    textoutput.value = words.join(" ");
+});
+    
     // 7.InVeRsE CaSe-
     document.getElementById("inverse").addEventListener("click", function inverseCase(event) {
         event.preventDefault();
